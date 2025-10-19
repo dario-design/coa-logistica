@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COA Logistica - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Login Screen -->
+        <div id="loginScreen" class="login-screen">
+            <div class="login-card">
+                <h1>COA Logistica</h1>
+                <form id="loginForm">
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <button type="submit">Accedi</button>
+                </form>
+                <div class="demo-credentials">
+                    <h3>Credenziali Demo:</h3>
+                    <p><strong>Admin:</strong> admin@coa.it / admin123</p>
+                    <p><strong>Operatore:</strong> operatore@coa.it / op123</p>
+                    <p><strong>Autista:</strong> autista@coa.it / aut123</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Dashboard -->
+        <div id="dashboard" class="dashboard hidden">
+            <header class="header">
+                <h1>COA Logistica</h1>
+                <div class="user-info">
+                    <span id="userRole"></span>
+                    <button id="logoutBtn">Logout</button>
+                </div>
+            </header>
+
+            <nav class="sidebar">
+                <ul>
+                    <li><a href="#" data-section="overview" class="nav-link active">Dashboard</a></li>
+                    <li><a href="#" data-section="shipments" class="nav-link">Spedizioni</a></li>
+                    <li><a href="#" data-section="warehouse" class="nav-link">Magazzino</a></li>
+                    <li><a href="#" data-section="routes" class="nav-link">Percorsi</a></li>
+                    <li><a href="#" data-section="analytics" class="nav-link">Analytics</a></li>
+                </ul>
+            </nav>
+
+            <main class="main-content">
+                <!-- Overview Section -->
+                <section id="overview" class="content-section active">
+                    <h2>Dashboard Generale</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h3>Spedizioni Attive</h3>
+                            <div class="stat-number">24</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>In Consegna</h3>
+                            <div class="stat-number">8</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Consegnate Oggi</h3>
+                            <div class="stat-number">15</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Efficienza</h3>
+                            <div class="stat-number">94%</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Shipments Section -->
+                <section id="shipments" class="content-section">
+                    <h2>Gestione Spedizioni</h2>
+                    <div class="shipments-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Destinazione</th>
+                                    <th>Stato</th>
+                                    <th>Autista</th>
+                                    <th>Azioni</th>
+                                </tr>
+                            </thead>
+                            <tbody id="shipmentsTableBody">
+                                <!-- Populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Warehouse Section -->
+                <section id="warehouse" class="content-section">
+                    <h2>Gestione Magazzino</h2>
+                    <div class="warehouse-grid">
+                        <div class="inventory-item">
+                            <h3>Prodotto A</h3>
+                            <p>Quantità: 150</p>
+                            <p>Ubicazione: A1-B2</p>
+                        </div>
+                        <div class="inventory-item">
+                            <h3>Prodotto B</h3>
+                            <p>Quantità: 89</p>
+                            <p>Ubicazione: B3-C1</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Routes Section -->
+                <section id="routes" class="content-section">
+                    <h2>Ottimizzazione Percorsi</h2>
+                    <div class="routes-container">
+                        <div class="route-card">
+                            <h3>Percorso Nord</h3>
+                            <p>5 consegne - 45km</p>
+                            <p>Tempo stimato: 3h 20min</p>
+                        </div>
+                        <div class="route-card">
+                            <h3>Percorso Sud</h3>
+                            <p>3 consegne - 28km</p>
+                            <p>Tempo stimato: 2h 15min</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Analytics Section -->
+                <section id="analytics" class="content-section">
+                    <h2>Analytics e Report</h2>
+                    <div class="analytics-grid">
+                        <div class="chart-container">
+                            <h3>Consegne per Giorno</h3>
+                            <div class="chart-placeholder">Grafico consegne</div>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Efficienza Autisti</h3>
+                            <div class="chart-placeholder">Grafico efficienza</div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
